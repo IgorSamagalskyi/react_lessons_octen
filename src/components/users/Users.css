@@ -1,0 +1,17 @@
+.wrap {
+  display: flex;
+}
+
+.wrap > div {
+  width: 50%;
+  text-align: center;
+  min-height: 890px;
+}
+
+.users-box {
+  background: #ff8f8f;
+}
+
+.choosen-one {
+  background: rgb(107, 196, 226);
+}
