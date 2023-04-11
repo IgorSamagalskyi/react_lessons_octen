@@ -4,12 +4,12 @@ const getUsers = () => {
   return fetch(url).then((value) => value.json());
 };
 
-const getUser = async (id) => {
+const getPostsOfUser = async (id) => {
   if (+id < 0) {
-    throw new Error("мусить бути id! id не має");
+    throw new Error("мусить бути id! id немає");
   }
 
-  return await fetch(url + "/" + id).then((value) => value.json());
+  return await fetch(url + "/" + id + "/posts").then((value) => value.json());
 };
 
-export { getUsers, getUser };
+export { getUsers, getPostsOfUser };
