@@ -5,19 +5,25 @@ import "./Users.css";
 
 function Users() {
   let [users, setUsers] = useState([]);
-
+  let [user, setUser] = useState(null);
   useEffect(() => {
     getUsers().then((res) => setUsers([...res]));
   }, []);
+
+  const choseUser = (u) => {
+    setUser({ ...u });
+  };
 
   return (
     <div className={"wrap"}>
       <div className={"users-box"}>
         {users.map((value) => (
-          <User key={value.id}  items={value}/>
+          <User key={value.id} items={value} choseUser={choseUser} />
         ))}
       </div>
-      <div className={"choosen-one"}>Da</div>
+      {user && (
+        <div className={"choosen-one"}>{JSON.stringify(user.username)}</div>
+      )}
     </div>
   );
 }

@@ -1,10 +1,12 @@
-function User({ items }) {
+function User({ items, choseUser }) {
+  const onClickChoseUser = () => {
+    choseUser(items);
+  };
+
   return (
     <div>
       {items.id}-{items.name}
-      <button onClick={()=>{
-				console.log(items);
-			}}>click me</button>
+      <button onClick={onClickChoseUser}>click me</button>
       <hr />
     </div>
   );
