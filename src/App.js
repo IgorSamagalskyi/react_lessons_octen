@@ -1,12 +1,10 @@
 import "./App.css";
-import Users from "./components/users/Users";
+import Form from "./components/form/Form";
 
 function App() {
-  return (
-    <div className="products">
-      <Users />
-    </div>
-  );
+  return <div className="products">
+		<Form/>
+	</div>;
 }
 
 export default App;
